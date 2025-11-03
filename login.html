@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Sistema de Reforzamiento Ofimática</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .login-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .login-header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .login-header p {
+            margin: 10px 0 0;
+            opacity: 0.8;
+        }
+        
+        .login-body {
+            padding: 30px;
+        }
+        
+        .form-control {
+            border-radius: 5px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        
+        .btn-login {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .btn-login:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        .login-footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .alert {
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .demo-accounts {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .demo-accounts h6 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .demo-account {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .demo-account:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h1>Iniciar Sesión</h1>
+            <p>Sistema de Reforzamiento Ofimática</p>
+        </div>
+        
+        <div class="login-body">
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="username" placeholder="Ingresa tu usuario" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember">Recordar mis datos</label>
+                </div>
+                
+                <button type="submit" class="btn btn-login">
+                    <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+                </button>
+                
+                <div class="demo-accounts">
+                    <h6>Cuentas de demostración:</h6>
+                    <div class="demo-account">
+                        <span>maestro1 / clave123</span>
+                    </div>
+                    <div class="demo-account">
+                        <span>docente2025 / password</span>
+                    </div>
+                    <div class="demo-account">
+                        <span>admin / admin123</span>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="alert alert-info d-none" id="loginMessage">
+                <i class="fas fa-info-circle me-2"></i>
+                <span id="messageText"></span>
+            </div>
+        </div>
+        
+        <div class="login-footer">
+            <p>¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a></p>
+            <p>¿No tienes una cuenta? <a href="#">Solicita acceso</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageElement = document.getElementById('loginMessage');
+            const messageText = document.getElementById('messageText');
+            
+            // Validación simple de campos vacíos
+            if (!username || !password) {
+                messageText.textContent = 'Por favor, completa todos los campos.';
+                messageElement.className = 'alert alert-danger';
+                messageElement.classList.remove('d-none');
+                return;
+            }
+            
+            // Mostrar mensaje de inicio de sesión exitoso
+            messageText.textContent = 'Inicio de sesión exitoso. Redirigiendo...';
+            messageElement.className = 'alert alert-success';
+            messageElement.classList.remove('d-none');
+            
+            // Simular proceso de autenticación
+            setTimeout(function() {
+                // Redirigir a la página especificada
+                window.location.href = 'https://fermont146.github.io/PruebaDocente';
+            }, 2000);
+        });
+        
+        // Función para llenar automáticamente con una cuenta de demostración
+        function fillDemoAccount(username, password) {
+            document.getElementById('username').value = username;
+            document.getElementById('password').value = password;
+        }
+        
+        // Agregar eventos a las cuentas de demostración para facilitar el acceso
+        document.querySelectorAll('.demo-account').forEach((account, index) => {
+            account.style.cursor = 'pointer';
+            account.addEventListener('click', function() {
+                const accounts = [
+                    {user: 'maestro1', pass: 'clave123'},
+                    {user: 'docente2025', pass: 'password'},
+                    {user: 'admin', pass: 'admin123'}
+                ];
+                fillDemoAccount(accounts[index].user, accounts[index].pass);
+            });
+        });
+    </script>
+</body>
+</html>
